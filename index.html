@@ -86,16 +86,27 @@
   .steps-wrap{margin-top:30px;}
   .steps-wrap h2{font-size:19px;text-align:center;margin:0 0 4px;}
   .steps-wrap .sub{text-align:center;color:var(--muted);font-size:13px;margin:0 0 20px;}
-  .steps{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;}
-  .step{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 13px;position:relative;
-    display:flex;flex-direction:column;gap:6px;box-shadow:0 2px 8px rgba(26,34,51,.05);}
-  .step .n{width:26px;height:26px;border-radius:50%;background:var(--vnpt);color:#fff;font-weight:800;font-size:13px;
-    display:flex;align-items:center;justify-content:center;}
-  .step.k .n{background:var(--warn);}
-  .step .s-t{font-size:12.5px;font-weight:700;line-height:1.25;}
-  .step .s-d{font-size:11.5px;color:var(--muted);}
-  .step .who{margin-top:auto;font-size:10.5px;font-weight:700;color:var(--vnpt);letter-spacing:.02em;}
-  .step.k .who{color:var(--warn);}
+  .work{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:start;}
+  .wcol{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 2px 10px rgba(26,34,51,.05);}
+  .wcol .wh{padding:13px 15px;color:#fff;}
+  .wcol.a .wh{background:linear-gradient(180deg,#2861bf,#1a4488);}
+  .wcol.b .wh{background:linear-gradient(180deg,#1f9862,#157048);}
+  .wcol.c .wh{background:linear-gradient(180deg,#cf7213,#a1560a);}
+  .wcol .wtag{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.9;}
+  .wcol .wt{font-weight:800;font-size:15px;line-height:1.25;margin-top:2px;}
+  .wcol .wo{font-size:11.5px;opacity:.9;margin-top:5px;}
+  .wbody{padding:4px 15px 14px;}
+  .wstep{position:relative;padding:13px 0 13px 36px;}
+  .wstep:not(:last-child){border-bottom:1px solid var(--line);}
+  .wstep .wn{position:absolute;left:0;top:13px;width:26px;height:26px;border-radius:50%;color:#fff;font-weight:800;font-size:12.5px;display:flex;align-items:center;justify-content:center;}
+  .wcol.a .wn{background:var(--vnpt);}
+  .wcol.b .wn{background:var(--open);}
+  .wcol.c .wn{background:var(--cust);}
+  .wstep.k .wn{background:var(--warn);}
+  .wstep .wst{font-weight:700;font-size:13px;line-height:1.3;color:var(--ink);}
+  .wstep .wsd{font-size:12px;color:var(--muted);margin-top:4px;}
+  .wstep .wsu{font-size:11px;font-weight:700;margin-top:6px;letter-spacing:.02em;color:var(--muted);}
+  .wstep .wsu b{color:var(--ink);}
   .gonogo{display:inline-block;font-size:9.5px;font-weight:800;color:#fff;background:var(--warn);
     padding:2px 7px;border-radius:5px;letter-spacing:.05em;}
 
@@ -103,13 +114,12 @@
 
   @media (max-width:920px){
     .lanes{grid-template-columns:1fr;}
-    .steps{grid-template-columns:repeat(2,1fr);}
+    .work{grid-template-columns:1fr;}
     .split,.drops{display:none;}
   }
   @media print{
     body{background:#fff;}
-    .lane,.step{box-shadow:none;}
-    .steps{grid-template-columns:repeat(3,1fr);}
+    .lane,.wcol{box-shadow:none;}
   }
 </style>
 </head>
@@ -243,45 +253,91 @@
 
   <!-- NEXT STEPS -->
   <div class="steps-wrap">
-    <h2>Các bước đi tiếp theo</h2>
-    <p class="sub">Trình tự triển khai chung cho cả 3 luồng, lấy bài toán y tế làm sản phẩm thí điểm</p>
-    <div class="steps">
-      <div class="step k">
-        <div class="n">1</div>
-        <div class="s-t">Ban hành bộ tiêu chí phân loại 3 nhóm dữ liệu</div>
-        <div class="s-d">Hướng dẫn rõ ranh giới khai thác — nền tảng cho mọi bước sau.</div>
-        <div class="who">TT giải pháp · CLSP tham mưu</div>
+    <h2>Các bước đi tiếp theo — 03 luồng công việc triển khai song song</h2>
+    <p class="sub">Theo Thông báo 2912 · lấy bài toán y tế làm sản phẩm thí điểm — các luồng chạy đồng thời, có điểm giao (GO/NO-GO ở luồng pháp lý)</p>
+    <div class="work">
+
+      <!-- WORKSTREAM A -->
+      <div class="wcol a">
+        <div class="wh">
+          <div class="wtag">Luồng công việc A</div>
+          <div class="wt">Nền tảng công nghệ &amp; dữ liệu</div>
+          <div class="wo">Chủ trì: TT DGS · TT giải pháp · Ban CLSP tham mưu</div>
+        </div>
+        <div class="wbody">
+          <div class="wstep">
+            <div class="wn">1</div>
+            <div class="wst">Ban hành bộ tiêu chí phân loại 3 nhóm dữ liệu</div>
+            <div class="wsd">Định nghĩa rõ ranh giới quyền sở hữu &amp; điều kiện khai thác từng nhóm — nền tảng cho mọi bước sau.</div>
+            <div class="wsu"><b>Chủ trì:</b> TT giải pháp · <b>Tham mưu:</b> Ban CLSP</div>
+          </div>
+          <div class="wstep">
+            <div class="wn">2</div>
+            <div class="wst">Rà soát &amp; gán từng trường dữ liệu vào đúng luồng</div>
+            <div class="wsd">Áp cho bài toán thí điểm "Động lực thị trường thuốc"; đánh dấu dữ liệu thuộc Luồng 3 (cần thỏa thuận).</div>
+            <div class="wsu"><b>Chủ trì:</b> TT giải pháp · <b>Tham mưu:</b> Ban CLSP</div>
+          </div>
+          <div class="wstep">
+            <div class="wn">3</div>
+            <div class="wst">Khử định danh + DPIA + PoC kỹ thuật</div>
+            <div class="wsd">Trên dữ liệu đã được phép khai thác: khử định danh, chống tái nhận dạng, đánh giá DPIA theo NĐ 356/2025; làm dashboard mẫu.</div>
+            <div class="wsu"><b>Chủ trì:</b> TT DGS</div>
+          </div>
+        </div>
       </div>
-      <div class="step">
-        <div class="n">2</div>
-        <div class="s-t">Rà soát &amp; gán từng trường dữ liệu vào đúng luồng</div>
-        <div class="s-d">Áp cho bài toán thí điểm "Động lực thị trường thuốc".</div>
-        <div class="who">TT giải pháp · CLSP tham mưu</div>
+
+      <!-- WORKSTREAM B -->
+      <div class="wcol b">
+        <div class="wh">
+          <div class="wtag">Luồng công việc B</div>
+          <div class="wt">Phát triển thị trường &amp; bài toán</div>
+          <div class="wo">Chủ trì: TT VGS · Ban KDGP · Ban CLSP tham mưu</div>
+        </div>
+        <div class="wbody">
+          <div class="wstep">
+            <div class="wn">1</div>
+            <div class="wst">Tìm kiếm, xác định đối tượng khách hàng mục tiêu</div>
+            <div class="wsd">Tiếp xúc, khảo sát nhu cầu &amp; khả năng chi trả; ưu tiên B2B quốc tế/FDI (hãng dược đa quốc gia).</div>
+            <div class="wsu"><b>Chủ trì:</b> TT VGS (tiếp xúc KH/đối tác nước ngoài)</div>
+          </div>
+          <div class="wstep">
+            <div class="wn">2</div>
+            <div class="wst">Từ dữ liệu VNPT đang có, xây dựng bài toán/SPDV</div>
+            <div class="wsd">Ghép nhu cầu khách hàng với dữ liệu sẵn có để ra đầu bài SPDV theo 07 tiêu chí; xác định giá trị mang lại.</div>
+            <div class="wsu"><b>Chủ trì:</b> TT giải pháp · <b>Tham mưu:</b> Ban CLSP</div>
+          </div>
+          <div class="wstep">
+            <div class="wn">3</div>
+            <div class="wst">Triển khai kinh doanh / thương mại hóa</div>
+            <div class="wsd">Hoàn thiện SPDV (MVP → chính thức); ký hợp đồng khách hàng; đưa ra thị trường, mở rộng và nhân rộng.</div>
+            <div class="wsu"><b>Chủ trì:</b> Ban KDGP · <b>Phối hợp:</b> TT VGS</div>
+          </div>
+        </div>
       </div>
-      <div class="step k">
-        <div class="n">3</div>
-        <div class="s-t">Dựng mẫu hợp đồng &amp; đàm phán bệnh viện thí điểm</div>
-        <div class="s-d">Xử lý Luồng 3 — nguồn chính. <span class="gonogo">GO / NO-GO</span></div>
-        <div class="who">Pháp chế VP · VGS</div>
+
+      <!-- WORKSTREAM C -->
+      <div class="wcol c">
+        <div class="wh">
+          <div class="wtag">Luồng công việc C</div>
+          <div class="wt">Hành lang pháp lý &amp; cơ chế kinh tế</div>
+          <div class="wo">Chủ trì: Pháp chế Văn phòng · Ban KHĐT</div>
+        </div>
+        <div class="wbody">
+          <div class="wstep k">
+            <div class="wn">1</div>
+            <div class="wst">Dựng mẫu hợp đồng &amp; xử lý ranh giới pháp lý <span class="gonogo">GO / NO-GO</span></div>
+            <div class="wsd">Với dữ liệu Luồng 3: dựng mẫu hợp đồng hợp tác/thỏa thuận chia sẻ dữ liệu &amp; doanh thu với chủ dữ liệu (bệnh viện); chốt quyền khai thác. Mốc quyết định.</div>
+            <div class="wsu"><b>Chủ trì:</b> Pháp chế Văn phòng</div>
+          </div>
+          <div class="wstep">
+            <div class="wn">2</div>
+            <div class="wst">Chốt cơ chế PNL nội bộ &amp; định giá</div>
+            <div class="wsd">Xây dựng cơ chế phân chia doanh thu nội bộ (PNL) giữa các đơn vị đóng góp – chủ dữ liệu; đóng gói &amp; định giá SPDV.</div>
+            <div class="wsu"><b>Chủ trì:</b> Ban KHĐT · <b>Tham mưu:</b> Ban CLSP</div>
+          </div>
+        </div>
       </div>
-      <div class="step">
-        <div class="n">4</div>
-        <div class="s-t">Khử định danh + DPIA + PoC kỹ thuật</div>
-        <div class="s-d">Trên dữ liệu đã được phép khai thác, theo NĐ 356/2025.</div>
-        <div class="who">TT DGS</div>
-      </div>
-      <div class="step">
-        <div class="n">5</div>
-        <div class="s-t">Chốt cơ chế PNL nội bộ &amp; định giá</div>
-        <div class="s-d">Phân chia doanh thu giữa DMS – DGS – VGS – chủ dữ liệu.</div>
-        <div class="who">Ban KHĐT · CLSP</div>
-      </div>
-      <div class="step">
-        <div class="n">6</div>
-        <div class="s-t">Ra MVP &amp; triển khai khách hàng thí điểm</div>
-        <div class="s-d">Rút kinh nghiệm để nhân rộng sang bài toán khác.</div>
-        <div class="who">TT VGS · CLSP</div>
-      </div>
+
     </div>
   </div>
 
